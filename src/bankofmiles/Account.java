@@ -96,10 +96,30 @@ public class Account {
                     withdraw(amount2);
                     System.out.println();
                     break;
-                    
-
+//                  Case 'D' allows the user to view their most recent transaction
+                case 'D':
+                    System.out.println("====================================");
+                    getPreviousTransaction();
+                    System.out.println("====================================");
+                    System.out.println();
+                    break;
+//                  Case 'E' calculates the accrued interest on the account after a number of years
+                case 'E':
+                    System.out.println("Enter how many years of accrued interest: ");
+                    int years = scanner.nextInt();
+                    calculateInterest(years);
+                    break;
+//                  Case 'F' exits the user from their account
+                case 'F':
+                    System.out.println("====================================");
+                    break;
+//                  The default case let's the user know they entered an invaild option
+                default:
+                    System.out.println("Error: invalid option. Please enter A, B, C, D, E, F");
+                    break;
             }
-        }
+        } while (option != 'F');
+        System.out.println("Thank you for banking with us!");
 
     }
 
