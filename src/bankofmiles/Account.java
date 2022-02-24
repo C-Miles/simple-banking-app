@@ -11,9 +11,19 @@ public class Account {
     String customerID;
 
 //    Class Constructor
-    Account(String name, String cid) {
-        customerName = name;
+    Account(String cname, String cid) {
+        customerName = cname;
         customerID = cid;
     }
+
+//    Methods for Depositing Money
+    void deposit(int amount) {
+        if (amount > 0) {
+            balance = balance + amount;
+            previousTransaction = amount;
+        }
+    }
+
+    
 
 }
